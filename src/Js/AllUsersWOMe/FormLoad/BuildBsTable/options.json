@@ -1,0 +1,34 @@
+{
+    "idfield": "pk",
+    "showFooter": "true",
+    "search": true,
+    "searchHighlight": true,
+    "data": [],
+    "onClickRow": "",
+    "responseHandler": "responseHandler",
+    "queryParams": "queryParams",
+    "rowStyle": "rowStyle",
+    "columns": [
+        {
+            "field": "Name",
+            "title": "Name"
+        },
+        {
+            "field": "id",
+            "title": "id"
+        },
+        {
+            "field": "latitude",
+            "title": "latitude"
+        },
+        {
+            "field": "longitude",
+            "title": "longitude"
+        },
+        {
+            "title": "SendMessage",
+            "field": "SendMessage",
+            "formatter":""
+        }
+    ]
+}
