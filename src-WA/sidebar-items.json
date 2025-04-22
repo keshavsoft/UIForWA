@@ -25,7 +25,7 @@
   },
   {
     "name": "Sign Out",
-    "url": "javascript:webSocket.send('stop')",
+    "url": "javascript:webSocket.send('StopWA')",
     "icon": "grid-fill"
   }
 ]
