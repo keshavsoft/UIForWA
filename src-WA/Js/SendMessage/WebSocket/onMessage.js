@@ -1,4 +1,5 @@
 import { StartFunc as sendMessage } from "./sendMessage.js";
+const CommonRedirectUrl = "scanQr.html";
 
 let StartFunc = (event) => {
     try {
@@ -6,26 +7,23 @@ let StartFunc = (event) => {
         console.log("jVarLocalParse : ", jVarLocalParse);
         switch (jVarLocalParse?.Type) {
             case "wAProfile":
-                wAProfile({ inData: jVarLocalParse.res });
-                break;
+                if ("res" in jVarLocalParse) {
+                    wAProfile({ inData: jVarLocalParse.res });
+                } else {
+                    location.href = CommonRedirectUrl;
+                };
 
+                break;
             default:
                 break;
         };
     } catch (error) {
-        // jFLocalShowMessage({ inMessage: event.data });
+        // StopWADone
+        console.log("string : ", event.data);
+        if (event.data === "StopWADone") {
+            location.href = CommonRedirectUrl;
+        };
     };
-};
-
-const jFLocalShowMessage = ({ inMessage }) => {
-    const template = document.querySelector("#RecieveMessageId");
-    let jVarLocalChatContentId = document.getElementById('ChatContentId');
-
-    // Clone the new row and insert it into the table
-    const clone = template.content.cloneNode(true);
-    clone.querySelector(".chat-message").innerHTML = inMessage;
-
-    jVarLocalChatContentId.appendChild(clone);
 };
 
 let jFLocalToInputUserNameId = (inValue) => {
