@@ -22,5 +22,10 @@
     "name": "Import",
     "url": "./import-Excel.html",
     "icon": "grid-fill"
+  },
+  {
+    "name": "Sign Out",
+    "url": "javascript:webSocket.send('stop')",
+    "icon": "grid-fill"
   }
 ]
