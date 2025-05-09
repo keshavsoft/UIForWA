@@ -24,6 +24,11 @@
     "icon": "grid-fill"
   },
   {
+    "name": "ReadAllChats",
+    "url": "javascript:webSocket.send('WAReadAllChats')",
+    "icon": "grid-fill"
+  },
+  {
     "name": "Sign Out",
     "url": "javascript:webSocket.send('StopWA')",
     "icon": "grid-fill"
